@@ -166,19 +166,16 @@ class List {
     return false
   }
 
-  hasCircularReference() {
-    let a = this.head
-    let b = this.head.next
-    while(a.next !== null) {
-      console.log(a.val)
-      if(a === b)
-        return true
-      a = a.next
-      b = b.next.next
-    }
+  appendNode(node) {
+    this.tail.next = node
+    this.tail = node
+    console.log(this.tail)
+    console.log(this.head)
   }
 
 
+
+  /// NOT MY ALGO!
   hasCircularReferenceSimeple() {
     let curr = this.head.next
     while(curr.next !== null) {
@@ -188,12 +185,6 @@ class List {
     return false
   }
 
-  appendNode(node) {
-    this.tail.next = node
-    this.tail = node
-    console.log(this.tail)
-    console.log(this.head)
-  }
 }
 
 
